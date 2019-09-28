@@ -1,0 +1,46 @@
+html,
+body,
+header,
+#intro {
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+#intro {
+    background: url("https://i.ibb.co/RyKh8Qk/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.top-nav-collapse {
+    background-color: #24355C;
+  }
+  @media (max-width: 768px) {
+    .navbar:not(.top-nav-collapse) {
+      background-color: #24355C;
+    }
+  }
+  @media (min-width: 800px) and (max-width: 850px) {
+    .navbar:not(.top-nav-collapse) {
+      background-color: #24355C;
+    }
+  }
+
+.img-activity {
+    height: 230px;
+    width: 350px;
+    object-fit: cover;
+}
+
+.img-latest-activity {
+    width: 350px; 
+    height: 240px; 
+    object-fit: cover;
+}

@@ -98,6 +98,7 @@ var script_url = "https://script.google.com/macros/s/AKfycbwOtWg76OZtuIZyISiFtuI
         var foto1_la      = json.records[0].foto1;
         var foto2_la      = json.records[0].foto2;
         var foto3_la      = json.records[0].foto3;
+        var linkIg_la     = json.records[0].link_ig;
 
         $("#titleLa").append('<strong>'+nama_la+'</strong>');
         $("#kategoriLa").append('<i class="fa fa-heart"></i> <strong>'+kategori_la+'</strong>');
@@ -117,6 +118,11 @@ var script_url = "https://script.google.com/macros/s/AKfycbwOtWg76OZtuIZyISiFtuI
         $("#contentModal9").append('<img src="'+foto3_la+'" class="img-fluid">');
 
         
+        $("#readMoreNaE").attr({
+          'href'    : linkIg_la,
+          'target'  : '_blank'
+        });
+
         $("#loaderLa").css({
           'visibility' : 'hidden',
           'display' : 'none'

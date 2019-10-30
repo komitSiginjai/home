@@ -142,13 +142,23 @@ var script_url = "https://script.google.com/macros/s/AKfycbwOtWg76OZtuIZyISiFtuI
           var dateNaE = json.records[0].date;
           var timeNaE = json.records[0].time;
           var posterNaE = json.records[0].poster;
+          var namaNaE = json.records[0].nama_event;
 
           $("#dateTime").append(dateNaE+', ');
           $("#dateTime").append(timeNaE);
           $("#poster").append('<center>' +
                   '<img src="'+posterNaE+'" alt="poster" class="img-fluid img-next-activity">' + 
               '</center>');
-      
+
+          if(namaNaE == 'Coming Soon') 
+          {
+            $("#b1").attr("disabled", true);
+          } 
+          else 
+          {
+            $("#b1").attr("disabled", false);
+          }
+          
             
           $("#loaderNaE").css({
             'visibility' : 'hidden',

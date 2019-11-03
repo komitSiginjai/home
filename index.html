@@ -18,6 +18,8 @@
   <link href="css/style.css" rel="stylesheet">
   <!-- JQuery Confirmation CSS -->
   <link rel="stylesheet" href="css/jquery-confirm.min.css">
+  <!-- Fancybox CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
   
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -196,6 +198,9 @@
               <div id="modalRow"></div>
               <div id="contentRow" data-aos='zoom-in-down' data-aos-duration='800'></div>
               
+              <a href="image.jpg" data-fancybox data-caption="Caption for single image">
+                  <img src="thumbnail.jpg" alt="ini gambar" />
+              </a>
 
             </section>
             <!--Section: Examples-->
@@ -281,18 +286,15 @@
                               <!--Slides-->
                               <div class="carousel-inner z-depth-1-half" role="listbox">
                                   <!--First slide-->
-                                  <div class="carousel-item active">
-                                      <a id="slideModal7"></a>
+                                  <div id="slideModal7" class="carousel-item active">
                                   </div>
                                   <!--/First slide-->
                                   <!--Second slide-->
-                                  <div class="carousel-item">
-                                      <a id="slideModal8"></a>
+                                  <div id="slideModal8" class="carousel-item">
                                   </div>
                                   <!--/Second slide-->
                                   <!--Third slide-->
-                                  <div class="carousel-item">
-                                      <a id="slideModal9"></a>
+                                  <div id="slideModal9" class="carousel-item">
                                   </div>
                                   <!--/Third slide-->
                               </div>
@@ -503,8 +505,8 @@
   <script src="js/aos.js"></script>
   <!-- JQuery Confirmation JS -->
   <script src="js/jquery-confirm.min.js"></script>
-  <!-- Sweetalert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <!-- Fancybox JS -->
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
   <!-- Custom JS -->
   <script src="js/custom.js"></script>
   <!-- Custom GAS JS -->

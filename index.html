@@ -16,6 +16,9 @@
   <link href="css/aos.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+  <!-- JQuery Confirmation CSS -->
+  <link rel="stylesheet" href="css/jquery-confirm.min.css">
+  
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
    
@@ -339,7 +342,7 @@
             <section id="next-activity">
               <div data-aos="fade-down" data-aos-duration="800">
                 <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold text-center">Next Activity</h2>
+                <h2 id="c1" class="mb-5 font-weight-bold text-center">Next Activity</h2>
               </div>
 
               <div data-aos="fade-down" data-aos-duration="800">
@@ -370,8 +373,9 @@
                                 <input type = "button" class="btn btn-primary" id = "b1" onClick="insert_value_naSuf()" value = "Ikutan Dong"></input>
                             </div>
                             <center>
+                              <br/>
                               <div id="loaderNaSuf"></div>
-                              <div id="reNaSuf" class="alert alert-success" role="alert"></div>
+                              <!-- <div id="reNaSuf" class="alert alert-success" role="alert"></div> -->
                             </center>
                             
                             
@@ -520,6 +524,10 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- AOS JS -->
   <script src="js/aos.js"></script>
+  <!-- JQuery Confirmation JS -->
+  <script src="js/jquery-confirm.min.js"></script>
+  <!-- Sweetalert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
   <!-- Custom JS -->
   <script src="js/custom.js"></script>
   <!-- Custom GAS JS -->

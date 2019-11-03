@@ -194,29 +194,45 @@ var script_url = "https://script.google.com/macros/s/AKfycbwOtWg76OZtuIZyISiFtuI
     
         $("#next-activity-alert-blank").modal();
 
-    } else {        
-        $("#loaderNaSuf").css({
-          'display' : 'block'
-        });
-        $("#reNaSuf").css({
-          'display' : 'none'
-        });
-        
-        var url = script_url+"?callback=ctrlq&nama="+nama+"&wa="+"'"+wa+"&email="+email+"&institusi="+institusi+"&tableName="+tableName+"&action=insert_naSuf";
-    
+    } else { 
+          $.confirm({
+              title: 'Confirm !',
+              content: 'Apakah data anda sudah benar ?',
+              type: 'red',
+              buttons: {
+                  confirm: function () {
+                      
+                    var url = script_url+"?callback=ctrlq&nama="+nama+"&wa="+"'"+wa+"&email="+email+"&institusi="+institusi+"&tableName="+tableName+"&action=insert_naSuf";
+                  
+              
+                    var request = jQuery.ajax({
+                    crossDomain: true,
+                    url: url ,
+                    method: "GET",
+                    dataType: "jsonp",
+                    headers: {
+                      'Access-Control-Allow-Credentials' : true,
+                      'Access-Control-Allow-Origin':'*',
+                      'Access-Control-Allow-Methods':'GET',
+                      'Access-Control-Allow-Headers':'application/json',
+                      }
+                    });   
 
-        var request = jQuery.ajax({
-        crossDomain: true,
-        url: url ,
-        method: "GET",
-        dataType: "jsonp",
-        headers: {
-          'Access-Control-Allow-Credentials' : true,
-          'Access-Control-Allow-Origin':'*',
-          'Access-Control-Allow-Methods':'GET',
-          'Access-Control-Allow-Headers':'application/json',
-        }
-        });
+                    $("#loaderNaSuf").css({
+                      'display' : 'block'
+                    });
+                    $("#reNaSuf").css({
+                      'display' : 'none'
+                    });
+
+                  },
+                  cancel: function () {
+                      $.alert('Canceled!');
+                  }
+              }
+          });
+        
+
     }
 
   }
@@ -227,17 +243,24 @@ var script_url = "https://script.google.com/macros/s/AKfycbwOtWg76OZtuIZyISiFtuI
     // print the returned data
     function ctrlq(e) {
   
-	
-        $("#reNaSuf").html(e.result);
-        $("#reNaSuf").css("display","block");
         $("#loaderNaSuf").css({
           'display' : 'none'
         });
 
-        $("#wa").val("");
-        $("#nama").val("");
-        $("#email").val("");
-        $("#institusi").val("");
+        $.confirm({
+          title: 'Congratulations!',
+          content: '<div class="alert alert-success" role="alert">' + e.result + '</div>',
+          type: 'green',
+          buttons: {
+              close: function(){
+                $("#wa").val("");
+                $("#nama").val("");
+                $("#email").val("");
+                $("#institusi").val("");
+              }
+          }
+        });
+
 
       }
     

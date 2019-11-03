@@ -191,8 +191,20 @@ var script_url = "https://script.google.com/macros/s/AKfycbwOtWg76OZtuIZyISiFtuI
     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
     if (wa == '' || !$.isNumeric(wa) || email == '' || !emailReg.test(email) || nama == '' || institusi == '' || tableName == '') {
-    
-        $("#next-activity-alert-blank").modal();
+        $.confirm({
+          title: 'Encountered an error!',
+          content: '<div class="alert alert-danger" role="alert">Isi Data dengan Lengkap dan Benar !',
+          type: 'red',
+          typeAnimated: true,
+          buttons: {
+              tryAgain: {
+                  text: 'Try again',
+                  btnClass: 'btn-red',
+                  action: function(){
+                  }
+              }
+          }
+      });
 
     } else { 
           $.confirm({

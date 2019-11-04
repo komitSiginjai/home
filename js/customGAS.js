@@ -31,34 +31,15 @@ var script_url = "https://script.google.com/macros/s/AKfycbwOtWg76OZtuIZyISiFtuI
             $("<div class='col-lg-4 col-md-12 mb-4'>" +
                 //data-aos='zoom-in-down' data-aos-duration='800' yg ga jalan
                 "<div>" +
-                  "<a><img class='img-fluid z-depth-1 img-activity' src='"+json.records[i].foto+"' alt='video'" +
-                      "data-toggle='modal' data-target='#modal"+[i]+"'></a>" +
+                  "<a href='" + json.records[i].foto +"' data-fancybox='images-whatwedo' data-caption='"+json.records[i].judul+"'>" +
+                      "<img class='img-fluid z-depth-1 img-activity' src='"+json.records[i].foto+"' alt='video'>" +
+                  "</a>" +
                     "<h4 class='my-4 font-weight-bold'>"+json.records[i].judul+"</h4>" +
                       "<p class='grey-text'>"+json.records[i].deskripsi+"</p>" +
                 "</div>" +            
             "</div>").appendTo(appendEl);
-
-            $(
-            // Central Modal Fluid
-                "<div class='modal fade' id='modal" +[i]+"'"+ " tabindex='-1' role='dialog' aria-labelledby='myModalLabel'" +
-                "aria-hidden='true'>" +
-
-                // Change class .modal-sm to change the size of the modal
-                "<div class='modal-dialog modal-fluid' role='document'>" +
-                  "<div class='modal-content'>" +
-                      "<img src='"+json.records[i].foto+"' class='img-fluid'>" +
-                    "<div class='modal-footer'>" +
-                      "<button type='button' class='btn btn-secondary btn-sm' data-dismiss='modal'>Close</button>" +
-                    "</div>" +
-                  "</div>" +
-                "</div>" +
-              "</div>" +
-          // Central Modal Fluid -->
-          "").appendTo("#modalRow");
         }
 
-          
-      
             
           $("#loaderWwd").css({
             'visibility' : 'hidden',
@@ -104,20 +85,19 @@ var script_url = "https://script.google.com/macros/s/AKfycbwOtWg76OZtuIZyISiFtuI
         $("#kategoriLa").append('<i class="fa fa-heart"></i> <strong>'+kategori_la+'</strong>');
         $("#deskripsiLa").append(deskripsi_la);
         $("#writerLa").append('by <a><strong>'+writer_la+'</strong></a>, '+date_la);
-        
-        $("#slideModal7").append('<img class="d-block w-100 img-latest-activity" src="'+foto1_la+'"' +
-          'alt="First slide" data-toggle="modal" data-target="#modal7">');
-        $("#contentModal7").append('<img src="'+foto1_la+'" class="img-fluid">');
 
-        $("#slideModal8").append('<img class="d-block w-100 img-latest-activity" src="'+foto2_la+'"' +
-          'alt="Second Slide" data-toggle="modal" data-target="#modal8">');
-        $("#contentModal8").append('<img src="'+foto2_la+'" class="img-fluid">');
-        
-        $("#slideModal9").append('<img class="d-block w-100 img-latest-activity" src="'+foto3_la+'"' +
-          'alt="Third Slide" data-toggle="modal" data-target="#modal9">');
-        $("#contentModal9").append('<img src="'+foto3_la+'" class="img-fluid">');
+        $('#slideModal7').append('<a href="'+foto1_la+'" data-fancybox="images-latestactivity">' +
+            '<img class="d-block w-100 img-latest-activity" src="'+foto1_la+'" alt="Slide Ke 1" >' +
+          '</a>');
 
-        
+        $('#slideModal8').append('<a href="'+foto2_la+'" data-fancybox="images-latestactivity">' +
+          '<img class="d-block w-100 img-latest-activity" src="'+foto2_la+'" alt="Slide Ke 2" >' +
+          '</a>');
+
+        $('#slideModal9').append('<a href="'+foto3_la+'" data-fancybox="images-latestactivity">' +
+            '<img class="d-block w-100 img-latest-activity" src="'+foto3_la+'" alt="Slide Ke 3" >' +
+          '</a>');
+ 
         $("#readMoreNaE").attr({
           'href'    : linkIg_la,
           'target'  : '_blank'
